@@ -27,11 +27,11 @@ public class CameraMove : MonoBehaviour
         {
             if (CameraTrigger.offset.x > 0)
             {
-                transform.position += new Vector3(19, 0, 0);
+                transform.position += new Vector3(38, 0, 0);
             }
             else
             {
-                transform.position += new Vector3(-19, 0, 0);
+                transform.position += new Vector3(-38, 0, 0);
             }
             
         }
