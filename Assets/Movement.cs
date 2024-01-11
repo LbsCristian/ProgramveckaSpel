@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    private const double V = -8.5;
+
     // Start is called before the first frame update
     Rigidbody2D rb;
     public int MovementSpeed = 5;
     public int JumpForce = 10;
+    public GameObject Enemy;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -20,9 +23,17 @@ public class Movement : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D otherObj)
+    {
+        if (otherObj.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Collided and died");
+            transform.position = new Vector2(-8, 1);
         }
     }
 }
