@@ -73,7 +73,7 @@ public class WaterGrab : MonoBehaviour
         {
             
                 trigger.enabled = false;
-                CameraTrigger.offset = new Vector2(-19, 0);
+                CameraTrigger.offset = new Vector2(-29, 0);
                 watercollider.enabled = false;
                 rb.isKinematic = true;
             
