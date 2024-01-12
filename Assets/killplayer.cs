@@ -25,7 +25,7 @@ public class killplayer : MonoBehaviour
         {
             Scene currentScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currentScene.name);
-            //player.transform.position = respawnpoint.position;
+            player.transform.position = respawnpoint.position;
         }
     }
 }
