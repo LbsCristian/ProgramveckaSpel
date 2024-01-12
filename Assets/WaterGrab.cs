@@ -59,6 +59,7 @@ public class WaterGrab : MonoBehaviour
             if (DropCheck.Cast(new Vector2(0,0), results,5)==1)
             {
                 transform.position += new Vector3(1.1f * direction, 0, 0);
+                rb.velocity = new Vector2(0,0);
                 watercollider.enabled = true;
                 trigger.enabled = true;
                 rb.isKinematic = false;
@@ -73,7 +74,7 @@ public class WaterGrab : MonoBehaviour
         {
             
                 trigger.enabled = false;
-                CameraTrigger.offset = new Vector2(-19, 0);
+                CameraTrigger.offset = new Vector2(-29, 0);
                 watercollider.enabled = false;
                 rb.isKinematic = true;
             
