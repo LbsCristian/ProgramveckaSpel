@@ -46,7 +46,7 @@ public class Movement2 : MonoBehaviour
 
         if (WaterTrigger.enabled == false)
         {
-            JumpForce = 10;
+            
             bc.size = new Vector2(1, 2);
             bc.offset = new Vector2(0, 0.5f);
         }
