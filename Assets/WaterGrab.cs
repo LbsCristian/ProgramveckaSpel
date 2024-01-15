@@ -1,3 +1,4 @@
+
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ public class WaterGrab : MonoBehaviour
 
     [SerializeField]
     BoxCollider2D DropCheck;
-    RaycastHit2D[] results =new RaycastHit2D[10];
+    RaycastHit2D[] results = new RaycastHit2D[10];
 
     public int wow;
-    
+    private bool pickUpAllowed;
 
     float direction;
     void Start()
@@ -33,9 +34,15 @@ public class WaterGrab : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.X))
+        {
+            PickUp();
+        }
+
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             direction = Input.GetAxisRaw("Horizontal");
@@ -54,34 +61,45 @@ public class WaterGrab : MonoBehaviour
         }
         wow = DropCheck.Cast(new Vector2(0, 0), results, 5);
 
-        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false) 
+        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false)
         {
-            if (DropCheck.Cast(new Vector2(0,0), results,5)==1)
+            if (DropCheck.Cast(new Vector2(0, 0), results, 5) == 1)
             {
-                transform.position += new Vector3(1.1f * direction, 0, 0);
-                rb.velocity = new Vector2(0,0);
+                transform.position += new Vector3(1.5f * direction, 0, 0);
                 watercollider.enabled = true;
+                rb.velocity = new Vector2(0, 0);
                 trigger.enabled = true;
                 rb.isKinematic = false;
             }
 
-            
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "Player")
-        {
-            
-                trigger.enabled = false;
-                CameraTrigger.offset = new Vector2(-29, 0);
-                watercollider.enabled = false;
-                rb.isKinematic = true;
-            
-            
-            
-            
 
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            pickUpAllowed = true;
+        }
+
+
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Player"))
+        {
+            pickUpAllowed = false;
+        }
+
+    }
+    private void PickUp()
+    {
+        trigger.enabled = false;
+        CameraTrigger.offset = new Vector2(-29, 0);
+        watercollider.enabled = false;
+        rb.isKinematic = true;
     }
 }
