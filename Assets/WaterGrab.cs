@@ -36,24 +36,30 @@ public class WaterGrab : MonoBehaviour
 
 
     // Update is called once per frame
+    int Xpress=0;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false)
+        wow = DropCheck.Cast(new Vector2(0, 0), results, 1);
+        Xpress = 0;
+        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false&&Xpress==0)
         {
-            if (DropCheck.Cast(new Vector2(0, 0), results, 1) == 0)
+            if (wow == 1)
             {
-                transform.position += new Vector3(1.5f * direction, 0, 0);
+                Debug.Log("DROP");
+                Xpress = 1;
                 watercollider.enabled = true;
                 rb.velocity = new Vector2(0, 0);
                 trigger.enabled = true;
                 rb.isKinematic = false;
+                transform.position += new Vector3(1.5f * direction, 0, 0);
             }
 
 
         }
-        if (pickUpAllowed && Input.GetKeyDown(KeyCode.X))
+        if (pickUpAllowed && Input.GetKeyDown(KeyCode.X)&&Xpress==0)
         {
             PickUp();
+            Xpress = 1;
         }
 
         if (Input.GetAxisRaw("Horizontal") != 0)
@@ -72,7 +78,7 @@ public class WaterGrab : MonoBehaviour
         {
             DropCheck.offset = new Vector2(-0.18f, 0);
         }
-        wow = DropCheck.Cast(new Vector2(0, 0), results, 1);
+        
 
         
     }
