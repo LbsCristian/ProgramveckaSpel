@@ -12,6 +12,7 @@ public class Movement2 : MonoBehaviour
     int JumpForce;
     public int DeafultJumpForce = 15;
     public GameObject Enemy;
+    public float force;
 
 
     BoxCollider2D bc;
@@ -23,7 +24,7 @@ public class Movement2 : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         bc = gameObject.GetComponent<BoxCollider2D>();
-        bc.size = new Vector2(1, 1);
+        
         bc.offset = new Vector2(0, 0f);
         JumpForce = DeafultJumpForce;
     }
@@ -35,6 +36,15 @@ public class Movement2 : MonoBehaviour
     }
     void Update()
     {
+        force = Input.GetAxisRaw("Horizontal");
+        if (force == 1)
+        {
+            transform.localScale = new Vector3(-8.125f, 8.125f, 8.125f);
+        }
+        else if (force == -1)
+        {
+            transform.localScale = new Vector3(8.125f, 8.125f, 8.125f);
+        }
         if (Input.GetKeyDown(KeyCode.Z) && rb.velocity.y == 0)
         {
             rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -46,23 +56,19 @@ public class Movement2 : MonoBehaviour
 
         if (WaterTrigger.enabled == false)
         {
-            
-            bc.size = new Vector2(1, 2);
-            bc.offset = new Vector2(0, 0.5f);
+
+
+            //bc.offset = new Vector2(0, 0.5f);
+            bc.size = new Vector2(0.14f, 0.57f);
+            bc.offset = new Vector2(0, 0.1f);
         }
         else
         {
             JumpForce = DeafultJumpForce;
-            bc.size = new Vector2(1, 1);
+            bc.size = new Vector2(0.14f, 0.36f);
             bc.offset = new Vector2(0, 0);
         }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "Water")
-        {
-
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D otherObj)
     {
@@ -72,4 +78,5 @@ public class Movement2 : MonoBehaviour
             transform.position = new Vector2(-8, 1);
         }
     }
+    
 }

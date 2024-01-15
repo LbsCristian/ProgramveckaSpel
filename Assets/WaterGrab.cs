@@ -38,6 +38,19 @@ public class WaterGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false)
+        {
+            if (DropCheck.Cast(new Vector2(0, 0), results, 1) == 0)
+            {
+                transform.position += new Vector3(1.5f * direction, 0, 0);
+                watercollider.enabled = true;
+                rb.velocity = new Vector2(0, 0);
+                trigger.enabled = true;
+                rb.isKinematic = false;
+            }
+
+
+        }
         if (pickUpAllowed && Input.GetKeyDown(KeyCode.X))
         {
             PickUp();
@@ -49,31 +62,19 @@ public class WaterGrab : MonoBehaviour
         }
         if (trigger.enabled == false)
         {
-            transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1, Player.transform.position.z);
+            transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2.36f, Player.transform.position.z);
         }
         if (direction == 1)
         {
-            DropCheck.offset = new Vector2(0.5f, 0);
+            DropCheck.offset = new Vector2(0.18f, 0);
         }
         else
         {
-            DropCheck.offset = new Vector2(-0.5f, 0);
+            DropCheck.offset = new Vector2(-0.18f, 0);
         }
-        wow = DropCheck.Cast(new Vector2(0, 0), results, 5);
+        wow = DropCheck.Cast(new Vector2(0, 0), results, 1);
 
-        if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false)
-        {
-            if (DropCheck.Cast(new Vector2(0, 0), results, 5) == 1)
-            {
-                transform.position += new Vector3(1.5f * direction, 0, 0);
-                watercollider.enabled = true;
-                rb.velocity = new Vector2(0, 0);
-                trigger.enabled = true;
-                rb.isKinematic = false;
-            }
-
-
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
