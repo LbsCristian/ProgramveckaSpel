@@ -589,6 +589,7 @@ GameObject:
   - component: {fileID: 583010408}
   - component: {fileID: 583010412}
   - component: {fileID: 583010413}
+  - component: {fileID: 583010414}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -765,7 +766,21 @@ MonoBehaviour:
   MovementSpeed: 10
   DeafultJumpForce: 15
   Enemy: {fileID: 988636834}
+  force: 0
   WaterTrigger: {fileID: 523786131}
+--- !u!114 &583010414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583010407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3e97e9ae3e4e24cba2c9adb09cfd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anime: {fileID: 0}
 --- !u!1 &914935140
 GameObject:
   m_ObjectHideFlags: 0
