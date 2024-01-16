@@ -50,7 +50,7 @@ public class WaterGrab : MonoBehaviour
             {
                 Xpress = 1;
                 watercollider.enabled = true;
-                rb.velocity = new Vector2(0, 0);
+                rb.velocity = new Vector2(0, -5);
                 trigger.enabled = true;
                 rb.isKinematic = false;
                 transform.position += new Vector3(1.5f * direction, 0, 0);
