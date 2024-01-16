@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79c0527744c54e64ab3504c0c0aaf1ac
+guid: 5b0401626ccc9444cade31ef51bd0151
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -123,11 +123,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WaterRun-Sheet_0
+      name: WaterIdle-Sheet 1_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 129
+        x: 4
+        y: 0
         width: 18
         height: 50
       alignment: 9
@@ -137,18 +137,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa48db1e21fc42847bd6e5f309540db3
-      internalID: -122816885
+      spriteID: 9f5f634ebc2def04cbe2b72745aba714
+      internalID: 2103234038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WaterRun-Sheet_1
+      name: WaterIdle-Sheet 1_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 129
+        x: 27
+        y: 0
         width: 18
         height: 49
       alignment: 9
@@ -158,134 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9117425c33d6024fb737bfae84d550e
-      internalID: -1001860312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 129
-        width: 18
-        height: 49
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4af2e0ce95871aa40a210de2a726ec87
-      internalID: 1412579599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 66
-        width: 18
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de1370aa8235c6040bcd2f4ab3b7224d
-      internalID: 1118021570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 66
-        width: 18
-        height: 49
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79a1fa9c1fe919440abd6922cb3cbe39
-      internalID: -823837514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 65
-        width: 18
-        height: 49
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15675bf636721a84eabc83c6bef7addc
-      internalID: -1095161277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 1
-        width: 18
-        height: 49
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8f8185fe370a024a91d8074797d4685
-      internalID: 1385309449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WaterRun-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 2
-        width: 18
-        height: 48
-      alignment: 9
-      pivot: {x: 0.5, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69647ed7450a51546903c7b8c84d1da5
-      internalID: 90052424
+      spriteID: 402c82ed023688c419765bfea075391f
+      internalID: -314752229
       vertices: []
       indices: 
       edges: []
@@ -301,14 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WaterRun-Sheet_0: -122816885
-      WaterRun-Sheet_1: -1001860312
-      WaterRun-Sheet_2: 1412579599
-      WaterRun-Sheet_3: 1118021570
-      WaterRun-Sheet_4: -823837514
-      WaterRun-Sheet_5: -1095161277
-      WaterRun-Sheet_6: 1385309449
-      WaterRun-Sheet_7: 90052424
+      WaterIdle-Sheet 1_0: 2103234038
+      WaterIdle-Sheet 1_1: -314752229
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
