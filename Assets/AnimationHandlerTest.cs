@@ -6,6 +6,7 @@ public class AnimationHandlerTest : MonoBehaviour
 {
     public Animator anime;
     Rigidbody2D rb;
+    public BoxCollider2D bc;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +19,6 @@ public class AnimationHandlerTest : MonoBehaviour
     {
         anime.SetFloat("HorizontalInput", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         anime.SetFloat("Y velocity", rb.velocity.y);
+        anime.SetBool("Haswater", bc.enabled);
     }
 }

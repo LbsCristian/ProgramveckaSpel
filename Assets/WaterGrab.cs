@@ -25,6 +25,8 @@ public class WaterGrab : MonoBehaviour
     BoxCollider2D DropCheck;
     RaycastHit2D[] results = new RaycastHit2D[10];
 
+    SpriteRenderer sr;
+
     public int wow;
     private bool pickUpAllowed;
 
@@ -32,6 +34,7 @@ public class WaterGrab : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
 
@@ -45,10 +48,9 @@ public class WaterGrab : MonoBehaviour
         {
             if (wow == 1)
             {
-                Debug.Log("DROP");
                 Xpress = 1;
                 watercollider.enabled = true;
-                rb.velocity = new Vector2(0, 0);
+                rb.velocity = new Vector2(0, -5);
                 trigger.enabled = true;
                 rb.isKinematic = false;
                 transform.position += new Vector3(1.5f * direction, 0, 0);
@@ -78,8 +80,14 @@ public class WaterGrab : MonoBehaviour
         {
             DropCheck.offset = new Vector2(-0.18f, 0);
         }
-        
-
+        if (trigger.enabled == false)
+        {
+            sr.enabled = false;
+        }
+        else
+        {
+            sr.enabled = true;
+        }
         
     }
 
