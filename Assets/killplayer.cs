@@ -27,5 +27,11 @@ public class killplayer : MonoBehaviour
             SceneManager.LoadScene(currentScene.name);
             player.transform.position = respawnpoint.position;
         }
+        if (other.gameObject.CompareTag("booket"))
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+            player.transform.position = respawnpoint.position;
+        }
     }
 }
