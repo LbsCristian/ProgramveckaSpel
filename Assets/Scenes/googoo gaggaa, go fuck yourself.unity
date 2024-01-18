@@ -3907,7 +3907,7 @@ MonoBehaviour:
   Player: {fileID: 583010407}
   trigger: {fileID: 779903417}
   watercollider: {fileID: 779903416}
-  CameraTrigger: {fileID: 33727104}
+  CameraTrigger: {fileID: 0}
   DropCheck: {fileID: 779903415}
   wow: 0
 --- !u!212 &779903419
