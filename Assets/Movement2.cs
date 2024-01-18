@@ -65,7 +65,7 @@ public class Movement2 : MonoBehaviour
         else
         {
             JumpForce = DeafultJumpForce;
-            bc.size = new Vector2(0.14f, 0.36f);
+            bc.size = new Vector2(0.14f, 0.35f);
             bc.offset = new Vector2(0, 0);
         }
         
