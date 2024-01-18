@@ -5,9 +5,11 @@ using UnityEngine;
 public class respawn : MonoBehaviour
 {
     public Vector3 respawnpoint;
+    public Transform respawnobject;
 
     public void RespawnNow()
     {
+        respawnpoint = respawnobject.position;
         transform.position = respawnpoint;
     }
 

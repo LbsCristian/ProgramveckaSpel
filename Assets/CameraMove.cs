@@ -7,6 +7,8 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     
     BoxCollider2D CameraTrigger;
+    public Transform respawn;
+    public Transform player;
 
     Camera currentcam;
     void Start()
@@ -25,6 +27,7 @@ public class CameraMove : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            respawn.position = player.position;
             if (CameraTrigger.offset.x > 0)
             {
                 transform.position += new Vector3(38, 0, 0);
