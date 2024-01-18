@@ -80,14 +80,18 @@ public class WaterGrab : MonoBehaviour
         {
             DropCheck.offset = new Vector2(-0.18f, 0);
         }
-        if (trigger.enabled == false)
+        if (gameObject.name == "WaterBarrel")
         {
-            sr.enabled = false;
+            if (trigger.enabled == false)
+            {
+                sr.enabled = false;
+            }
+            else
+            {
+                sr.enabled = true;
+            }
         }
-        else
-        {
-            sr.enabled = true;
-        }
+       
         
     }
 
@@ -113,7 +117,10 @@ public class WaterGrab : MonoBehaviour
     private void PickUp()
     {
         trigger.enabled = false;
-        CameraTrigger.offset = new Vector2(-29, 0);
+        if (gameObject.name == "WaterBarrel")
+        {
+            CameraTrigger.offset = new Vector2(-29, 0);
+        }
         watercollider.enabled = false;
         rb.isKinematic = true;
     }
