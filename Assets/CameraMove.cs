@@ -27,14 +27,16 @@ public class CameraMove : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            respawn.position = player.position;
+            
             if (CameraTrigger.offset.x > 0)
             {
                 transform.position += new Vector3(38, 0, 0);
+                respawn.position = player.position + new Vector3(5, 0, 0);
             }
             else
             {
                 transform.position += new Vector3(-38, 0, 0);
+                respawn.position = player.position - new Vector3(5, 0, 0);
             }
             
         }
