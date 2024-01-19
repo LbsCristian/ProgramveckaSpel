@@ -11,7 +11,6 @@ public class Movement2 : MonoBehaviour
     public int MovementSpeed = 10;
     int JumpForce;
     public int DeafultJumpForce = 15;
-    public GameObject Enemy;
     public float force;
 
 
