@@ -24,16 +24,16 @@ public class WaterGrab : MonoBehaviour
     BoxCollider2D DropCheck;
     RaycastHit2D[] results = new RaycastHit2D[10];
 
-    SpriteRenderer sr;
+    SpriteRenderer SpriteRenderer;
 
-    public int wow;
+    int castResults;
     private bool pickUpAllowed;
 
     float direction;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
@@ -41,18 +41,23 @@ public class WaterGrab : MonoBehaviour
     int Xpress=0;
     void Update()
     {
-        wow = DropCheck.Cast(new Vector2(0, 0), results, 1);
+        castResults = DropCheck.Cast(new Vector2(0, 0), results, 1);
         Xpress = 0;
         if (Input.GetKeyDown(KeyCode.X) && trigger.enabled == false&&Xpress==0)
         {
-            if (wow == 1)
+            Xpress = 1;
+            watercollider.enabled = true;
+            rb.velocity = new Vector2(0, -5);
+            trigger.enabled = true;
+            rb.isKinematic = false;
+            
+            if (castResults == 1)
             {
-                Xpress = 1;
-                watercollider.enabled = true;
-                rb.velocity = new Vector2(0, -5);
-                trigger.enabled = true;
-                rb.isKinematic = false;
                 transform.position += new Vector3(1.5f * direction, 0, 0);
+            }
+            else
+            {
+                Player.transform.position -=new Vector3 (1.5f * direction, 0, 0);
             }
 
 
@@ -78,16 +83,17 @@ public class WaterGrab : MonoBehaviour
         else
         {
             DropCheck.offset = new Vector2(-0.18f, 0);
+            
         }
         if (gameObject.name == "WaterBarrel")
         {
             if (trigger.enabled == false)
             {
-                sr.enabled = false;
+                SpriteRenderer.enabled = false;
             }
             else
             {
-                sr.enabled = true;
+                SpriteRenderer.enabled = true;
             }
         }
        
@@ -116,10 +122,6 @@ public class WaterGrab : MonoBehaviour
     private void PickUp()
     {
         trigger.enabled = false;
-        if (gameObject.name == "WaterBarrel")
-        {
-            CameraTrigger.offset = new Vector2(-29, 0);
-        }
         watercollider.enabled = false;
         rb.isKinematic = true;
     }

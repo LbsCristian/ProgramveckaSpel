@@ -129,9 +129,9 @@ TextureImporter:
         x: 0
         y: 32
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -153,11 +153,11 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 14
-        height: 13
-      alignment: 9
-      pivot: {x: 0.62, y: 0.576}
-      border: {x: 2, y: 2, z: 2, w: 2}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
       - - {x: -5, y: 0.5}
@@ -176,12 +176,12 @@ TextureImporter:
       name: ThornBushTile_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 16
+        y: 16
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -201,12 +201,12 @@ TextureImporter:
       name: ThornBushTile_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
@@ -228,11 +228,11 @@ TextureImporter:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 15
+        width: 16
         height: 16
-      alignment: 9
-      pivot: {x: 0.51, y: 0.45}
-      border: {x: 4, y: 2, z: 4, w: 2}
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
       - - {x: -5.5, y: 4}
@@ -263,7 +263,6 @@ TextureImporter:
       ThornBushTile_2: 493597205
       ThornBushTile_3: -844118290
       ThornBushTile_4: -1605256073
-      ThornBushTile_5: -180743773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

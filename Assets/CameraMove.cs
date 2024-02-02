@@ -7,6 +7,7 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     
     BoxCollider2D CameraTrigger;
+    public BoxCollider2D CameraHitbox;
     public Transform respawn;
     public Transform player;
 
@@ -23,7 +24,7 @@ public class CameraMove : MonoBehaviour
         
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Player")
         {
@@ -32,11 +33,13 @@ public class CameraMove : MonoBehaviour
             {
                 transform.position += new Vector3(38, 0, 0);
                 respawn.position = player.position + new Vector3(5, 0, 0);
+                player.position += new Vector3(3, 0, 0);
             }
             else
             {
                 transform.position += new Vector3(-38, 0, 0);
                 respawn.position = player.position - new Vector3(5, 0, 0);
+                player.position -= new Vector3(3, 0, 0);
             }
             
         }
